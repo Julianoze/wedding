@@ -26,6 +26,16 @@ export default function Home() {
     );
   };
 
+  const PageCard = ({ text } : { text : string }) => {
+    return (
+      <Card
+      content={{
+        description: text
+      }}
+      />
+    )
+  }
+
   return (
     <main className={styles.main}>
       {data.map((x : Content, i : number)=> {
@@ -37,17 +47,25 @@ export default function Home() {
         )
       })}
 
+      <PageCard
+        text="Paz e amor é o que eu quero pra nós, e que nada nesse mundo cale a nossa voz" />
       <Title
         emojiCode="127909"
         text="De frente com JuZé"
       />
       <p>Vídeo</p>
 
+      <PageCard
+        text="Borboletas sempre voltam e o seu jardim sou eu..." />
       <Title
         emojiCode="129482"
         text="Memórias congeladas"
       />
+
       <Grid />
+      <PageCard
+        text="A medida de amar é amar sem medida " />
+
     </main>
   );
 }
