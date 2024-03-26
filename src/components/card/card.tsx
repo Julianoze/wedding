@@ -1,6 +1,7 @@
 import Content from "@/models/Content";
 import styles from "./card.module.css";
 import Image from "next/image";
+import Title from "../title/title";
 
 type Props = {
     content : Content
@@ -8,29 +9,6 @@ type Props = {
 
 function Card(props : Props) {
     const hasTitle = () => props.content.title;
-
-    const Title = () => {
-        const title = props.content.title;
-
-        if(!hasTitle())
-            return <></>;
-
-        return (
-            <div className={styles.title}>
-                <Emoji />
-                <h1>{title}</h1>
-            </div>
-        );
-    }
-
-    const Emoji = () => {
-        const emojiCode = props.content.emojiCode;
-
-        if(!emojiCode)
-            return <></>;
-
-        return <h1>{String.fromCodePoint(parseInt(emojiCode))}</h1>;
-    }
 
     const Content = () => {
         if(hasTitle())
@@ -98,7 +76,10 @@ function Card(props : Props) {
 
     return (
         <div className={styles[`card${hasTitle() ? '' : '-citation'}`]}>
-            <Title />
+            <Title
+                text={props.content.title}
+                emojiCode={props.content.emojiCode}
+            />
             <Content />
         </div>
     );

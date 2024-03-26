@@ -5,26 +5,6 @@
     padding-right: 16px;
 }
 
-.title > h1 {
-    font-weight: 600;
-    font-size: 24px;
-
-    margin-top: 0px;
-    margin-bottom: 12px;
-
-    display: inline;
-}
-
-.title > h1:first-child {
-    font-size: 20px;
-}
-
-.title > h1:last-child {
-    font-style: italic;
-    padding-left: 8px;
-    line-height: 1.2;
-}
-
 .content {
     display: flex;
 }
