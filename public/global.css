@@ -1,0 +1,11 @@
+@media (min-width: 400px) {
+    body {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        width: 33%
+    }
+}
